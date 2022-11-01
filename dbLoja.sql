@@ -40,15 +40,21 @@ values('Guilherme de Oliveira','guilhermeor10@hotmail.com','478.749.657-17','958
 insert into tbFuncionarios(nome,email,cpf,tel)
 values('Lucas Leoocardio','dosleocadio@gmail.com','282.741.658-22','98587-2399');
 insert into tbFuncionarios(nome,email,cpf,tel)
-values('João Otario','tavinho@hotmail.com','562.742.659-15','93458-1780');
+values('Joao Otario','tavinho@hotmail.com','562.742.659-15','93458-1780');
 
 insert into tbUsuarios(nome,senha)
 values('Gui.OR','40028922');
 insert into tbUsuarios(nome,senha)
 values('Don.o.cardio','123456');
 insert into tbUsuarios(nome,senha)
-values('João.Otario','654321');
+values('Joao.Otario','654321');
 
 -- vizualizar os registros da tabela
 select * from tbFuncionarios;
 select * from tbUsuarios;
+
+-- alterando os registros das tabelas
+update tbUsuarios set senha = '12345678' where codUsu = 3;
+
+select * from tbUsuarios
+
