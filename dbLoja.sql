@@ -56,5 +56,9 @@ select * from tbUsuarios;
 -- alterando os registros das tabelas
 update tbUsuarios set senha = '12345678' where codUsu = 3;
 
-select * from tbUsuarios
+select * from tbUsuarios;
 
+-- excluindo os registros das tabelas
+delete from tbUsuarios where codUsu = 3;
+
+select * from tbUsuarios;
