@@ -27,12 +27,25 @@ senha varchar(14),
 primary key(codUsu)
 );
 
+create table tbProdutos(
+codProd int auto_increment,
+descricao varchar(50),
+preco decimal(9,2),
+validade date,
+quantidade int,
+tipo varchar(10),
+primary key(codProd)
+);
+
+
+
 -- visualizando as tabelas no banco de dados
 show tables;
 
 -- visualizando a estrutura das tabelas
 desc tbFuncionarios;
 desc tbUsuarios;
+desc tbProdutos;
 
 -- inserindo valores nas tabelas
 insert into tbFuncionarios(nome,email,cpf,tel)
@@ -49,6 +62,20 @@ values('Don.o.cardio','123456');
 insert into tbUsuarios(nome,senha)
 values('Joao.Otario','654321');
 
+insert into tbProdutos(descricao,preco,validade,quantidade,tipo)
+values('Banana',20.50, '2022-11-07', 12, 'Duzia');
+insert into tbProdutos(descricao,preco,validade,quantidade,tipo)
+values('Chocolicia',2.00, '2022-11-04', 1, 'Unidade');
+insert into tbProdutos(descricao,preco,validade,quantidade,tipo)
+values('Melancia',30.0, '2022-11-30', 1, 'Unidade');
+insert into tbProdutos(descricao,preco,validade,quantidade,tipo)
+values('Morango',10.50, '2022-11-08', 1, 'Caixa');
+insert into tbProdutos(descricao,preco,validade,quantidade,tipo)
+values('Peixe',40.50, '2022-11-05', 1, 'Unidade');
+insert into tbProdutos(descricao,preco,validade,quantidade,tipo)
+values('Banana',20.50, '2022-11-07', 12, 'Duzia');
+
+
 -- vizualizar os registros da tabela
 select * from tbFuncionarios;
 select * from tbUsuarios;
@@ -56,9 +83,21 @@ select * from tbUsuarios;
 -- alterando os registros das tabelas
 update tbUsuarios set senha = '12345678' where codUsu = 3;
 
+-- busca por codigo
+select * from tbProdutos where codProd = 2;
+
+
+-- Alterar os valores para 10%	
+update tbProdutos set preco = preco * 1.10 where preco > 11.00;
+
 select * from tbUsuarios;
 
 -- excluindo os registros das tabelas
 delete from tbUsuarios where codUsu = 3;
 
 select * from tbUsuarios;
+
+-- Pesquisar com like para achar resultados especificos
+select * from tbProdutos where descricao like '%n%';
+
+
